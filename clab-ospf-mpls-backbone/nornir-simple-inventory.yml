@@ -1,4 +1,44 @@
 ---
+R1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.11
+R2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.12
+R3:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.13
+R4:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.14
+R5:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.15
+R6:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.16
+R7:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.17
+R8:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.18
 Site-A:
     username: 
     password: 
@@ -19,43 +59,3 @@ Site-D:
     password: 
     platform: linux
     hostname: 172.20.21.104
-R1:
-    username: admin
-    password: NokiaSrl1!
-    platform: nokia_srlinux
-    hostname: 172.20.21.11
-R2:
-    username: admin
-    password: NokiaSrl1!
-    platform: nokia_srlinux
-    hostname: 172.20.21.12
-R3:
-    username: admin
-    password: NokiaSrl1!
-    platform: nokia_srlinux
-    hostname: 172.20.21.13
-R4:
-    username: admin
-    password: NokiaSrl1!
-    platform: nokia_srlinux
-    hostname: 172.20.21.14
-R5:
-    username: admin
-    password: NokiaSrl1!
-    platform: nokia_srlinux
-    hostname: 172.20.21.15
-R6:
-    username: admin
-    password: NokiaSrl1!
-    platform: nokia_srlinux
-    hostname: 172.20.21.16
-R7:
-    username: admin
-    password: NokiaSrl1!
-    platform: nokia_srlinux
-    hostname: 172.20.21.17
-R8:
-    username: admin
-    password: NokiaSrl1!
-    platform: nokia_srlinux
-    hostname: 172.20.21.18
