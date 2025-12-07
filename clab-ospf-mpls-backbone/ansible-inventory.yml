@@ -1,0 +1,42 @@
+all:
+  vars:
+    # The generated inventory is assumed to be used from the clab host.
+    # Hence no http proxy should be used. Therefore we make sure the http
+    # module does not attempt using any global http proxy.
+    ansible_httpapi_use_proxy: false
+  children:
+    linux:
+      hosts:
+        clab-ospf-mpls-backbone-Site-A:
+          ansible_host: 172.20.21.101
+        clab-ospf-mpls-backbone-Site-B:
+          ansible_host: 172.20.21.102
+        clab-ospf-mpls-backbone-Site-C:
+          ansible_host: 172.20.21.103
+        clab-ospf-mpls-backbone-Site-D:
+          ansible_host: 172.20.21.104
+    nokia_srlinux:
+      vars:
+        ansible_network_os: nokia.srlinux.srlinux
+        # default connection type for nodes of this kind
+        # feel free to override this in your inventory
+        ansible_connection: ansible.netcommon.httpapi
+        ansible_user: admin
+        ansible_password: NokiaSrl1!
+      hosts:
+        clab-ospf-mpls-backbone-R1:
+          ansible_host: 172.20.21.11
+        clab-ospf-mpls-backbone-R2:
+          ansible_host: 172.20.21.12
+        clab-ospf-mpls-backbone-R3:
+          ansible_host: 172.20.21.13
+        clab-ospf-mpls-backbone-R4:
+          ansible_host: 172.20.21.14
+        clab-ospf-mpls-backbone-R5:
+          ansible_host: 172.20.21.15
+        clab-ospf-mpls-backbone-R6:
+          ansible_host: 172.20.21.16
+        clab-ospf-mpls-backbone-R7:
+          ansible_host: 172.20.21.17
+        clab-ospf-mpls-backbone-R8:
+          ansible_host: 172.20.21.18

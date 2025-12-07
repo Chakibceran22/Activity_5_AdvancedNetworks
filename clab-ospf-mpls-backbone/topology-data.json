@@ -1,0 +1,649 @@
+{
+  "name": "ospf-mpls-backbone",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "ospf-mgmt",
+        "bridge": "br-0eddc9fd61e3",
+        "ipv4-subnet": "172.20.21.0/24",
+        "ipv4-gw": "172.20.21.1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": [],
+  "nodes": {
+    "R1": {
+      "index": "0",
+      "shortname": "R1",
+      "longname": "clab-ospf-mpls-backbone-R1",
+      "fqdn": "R1.ospf-mpls-backbone.io",
+      "group": "",
+      "labdir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/R1",
+      "kind": "nokia_srlinux",
+      "image": "ghcr.io/nokia/srlinux:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.21.11",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "1a:b2:00:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-0eddc9fd61e3",
+        "clab-node-group": "",
+        "clab-node-kind": "nokia_srlinux",
+        "clab-node-lab-dir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/R1",
+        "clab-node-longname": "clab-ospf-mpls-backbone-R1",
+        "clab-node-name": "R1",
+        "clab-node-type": "ixr-d2l",
+        "clab-owner": "chakib",
+        "clab-topo-file": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/main.clab.yml",
+        "containerlab": "ospf-mpls-backbone"
+      },
+      "port-bindings": [
+      ]
+    },
+    "R2": {
+      "index": "1",
+      "shortname": "R2",
+      "longname": "clab-ospf-mpls-backbone-R2",
+      "fqdn": "R2.ospf-mpls-backbone.io",
+      "group": "",
+      "labdir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/R2",
+      "kind": "nokia_srlinux",
+      "image": "ghcr.io/nokia/srlinux:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.21.12",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "1a:7d:01:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-0eddc9fd61e3",
+        "clab-node-group": "",
+        "clab-node-kind": "nokia_srlinux",
+        "clab-node-lab-dir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/R2",
+        "clab-node-longname": "clab-ospf-mpls-backbone-R2",
+        "clab-node-name": "R2",
+        "clab-node-type": "ixr-d2l",
+        "clab-owner": "chakib",
+        "clab-topo-file": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/main.clab.yml",
+        "containerlab": "ospf-mpls-backbone"
+      },
+      "port-bindings": [
+      ]
+    },
+    "R3": {
+      "index": "2",
+      "shortname": "R3",
+      "longname": "clab-ospf-mpls-backbone-R3",
+      "fqdn": "R3.ospf-mpls-backbone.io",
+      "group": "",
+      "labdir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/R3",
+      "kind": "nokia_srlinux",
+      "image": "ghcr.io/nokia/srlinux:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.21.13",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "1a:b3:02:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-0eddc9fd61e3",
+        "clab-node-group": "",
+        "clab-node-kind": "nokia_srlinux",
+        "clab-node-lab-dir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/R3",
+        "clab-node-longname": "clab-ospf-mpls-backbone-R3",
+        "clab-node-name": "R3",
+        "clab-node-type": "ixr-d2l",
+        "clab-owner": "chakib",
+        "clab-topo-file": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/main.clab.yml",
+        "containerlab": "ospf-mpls-backbone"
+      },
+      "port-bindings": [
+      ]
+    },
+    "R4": {
+      "index": "3",
+      "shortname": "R4",
+      "longname": "clab-ospf-mpls-backbone-R4",
+      "fqdn": "R4.ospf-mpls-backbone.io",
+      "group": "",
+      "labdir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/R4",
+      "kind": "nokia_srlinux",
+      "image": "ghcr.io/nokia/srlinux:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.21.14",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "1a:dd:03:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-0eddc9fd61e3",
+        "clab-node-group": "",
+        "clab-node-kind": "nokia_srlinux",
+        "clab-node-lab-dir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/R4",
+        "clab-node-longname": "clab-ospf-mpls-backbone-R4",
+        "clab-node-name": "R4",
+        "clab-node-type": "ixr-d2l",
+        "clab-owner": "chakib",
+        "clab-topo-file": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/main.clab.yml",
+        "containerlab": "ospf-mpls-backbone"
+      },
+      "port-bindings": [
+      ]
+    },
+    "R5": {
+      "index": "4",
+      "shortname": "R5",
+      "longname": "clab-ospf-mpls-backbone-R5",
+      "fqdn": "R5.ospf-mpls-backbone.io",
+      "group": "",
+      "labdir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/R5",
+      "kind": "nokia_srlinux",
+      "image": "ghcr.io/nokia/srlinux:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.21.15",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "1a:38:04:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-0eddc9fd61e3",
+        "clab-node-group": "",
+        "clab-node-kind": "nokia_srlinux",
+        "clab-node-lab-dir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/R5",
+        "clab-node-longname": "clab-ospf-mpls-backbone-R5",
+        "clab-node-name": "R5",
+        "clab-node-type": "ixr-d2l",
+        "clab-owner": "chakib",
+        "clab-topo-file": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/main.clab.yml",
+        "containerlab": "ospf-mpls-backbone"
+      },
+      "port-bindings": [
+      ]
+    },
+    "R6": {
+      "index": "5",
+      "shortname": "R6",
+      "longname": "clab-ospf-mpls-backbone-R6",
+      "fqdn": "R6.ospf-mpls-backbone.io",
+      "group": "",
+      "labdir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/R6",
+      "kind": "nokia_srlinux",
+      "image": "ghcr.io/nokia/srlinux:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.21.16",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "1a:df:05:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-0eddc9fd61e3",
+        "clab-node-group": "",
+        "clab-node-kind": "nokia_srlinux",
+        "clab-node-lab-dir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/R6",
+        "clab-node-longname": "clab-ospf-mpls-backbone-R6",
+        "clab-node-name": "R6",
+        "clab-node-type": "ixr-d2l",
+        "clab-owner": "chakib",
+        "clab-topo-file": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/main.clab.yml",
+        "containerlab": "ospf-mpls-backbone"
+      },
+      "port-bindings": [
+      ]
+    },
+    "R7": {
+      "index": "6",
+      "shortname": "R7",
+      "longname": "clab-ospf-mpls-backbone-R7",
+      "fqdn": "R7.ospf-mpls-backbone.io",
+      "group": "",
+      "labdir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/R7",
+      "kind": "nokia_srlinux",
+      "image": "ghcr.io/nokia/srlinux:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.21.17",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "1a:a0:06:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-0eddc9fd61e3",
+        "clab-node-group": "",
+        "clab-node-kind": "nokia_srlinux",
+        "clab-node-lab-dir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/R7",
+        "clab-node-longname": "clab-ospf-mpls-backbone-R7",
+        "clab-node-name": "R7",
+        "clab-node-type": "ixr-d2l",
+        "clab-owner": "chakib",
+        "clab-topo-file": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/main.clab.yml",
+        "containerlab": "ospf-mpls-backbone"
+      },
+      "port-bindings": [
+      ]
+    },
+    "R8": {
+      "index": "7",
+      "shortname": "R8",
+      "longname": "clab-ospf-mpls-backbone-R8",
+      "fqdn": "R8.ospf-mpls-backbone.io",
+      "group": "",
+      "labdir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/R8",
+      "kind": "nokia_srlinux",
+      "image": "ghcr.io/nokia/srlinux:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.21.18",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "1a:24:07:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-0eddc9fd61e3",
+        "clab-node-group": "",
+        "clab-node-kind": "nokia_srlinux",
+        "clab-node-lab-dir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/R8",
+        "clab-node-longname": "clab-ospf-mpls-backbone-R8",
+        "clab-node-name": "R8",
+        "clab-node-type": "ixr-d2l",
+        "clab-owner": "chakib",
+        "clab-topo-file": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/main.clab.yml",
+        "containerlab": "ospf-mpls-backbone"
+      },
+      "port-bindings": [
+      ]
+    },
+    "Site-A": {
+      "index": "8",
+      "shortname": "Site-A",
+      "longname": "clab-ospf-mpls-backbone-Site-A",
+      "fqdn": "Site-A.ospf-mpls-backbone.io",
+      "group": "",
+      "labdir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/Site-A",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.21.101",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-0eddc9fd61e3",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/Site-A",
+        "clab-node-longname": "clab-ospf-mpls-backbone-Site-A",
+        "clab-node-name": "Site-A",
+        "clab-node-type": "",
+        "clab-owner": "chakib",
+        "clab-topo-file": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/main.clab.yml",
+        "containerlab": "ospf-mpls-backbone"
+      },
+      "port-bindings": [
+      ]
+    },
+    "Site-B": {
+      "index": "9",
+      "shortname": "Site-B",
+      "longname": "clab-ospf-mpls-backbone-Site-B",
+      "fqdn": "Site-B.ospf-mpls-backbone.io",
+      "group": "",
+      "labdir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/Site-B",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.21.102",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-0eddc9fd61e3",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/Site-B",
+        "clab-node-longname": "clab-ospf-mpls-backbone-Site-B",
+        "clab-node-name": "Site-B",
+        "clab-node-type": "",
+        "clab-owner": "chakib",
+        "clab-topo-file": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/main.clab.yml",
+        "containerlab": "ospf-mpls-backbone"
+      },
+      "port-bindings": [
+      ]
+    },
+    "Site-C": {
+      "index": "10",
+      "shortname": "Site-C",
+      "longname": "clab-ospf-mpls-backbone-Site-C",
+      "fqdn": "Site-C.ospf-mpls-backbone.io",
+      "group": "",
+      "labdir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/Site-C",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.21.103",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-0eddc9fd61e3",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/Site-C",
+        "clab-node-longname": "clab-ospf-mpls-backbone-Site-C",
+        "clab-node-name": "Site-C",
+        "clab-node-type": "",
+        "clab-owner": "chakib",
+        "clab-topo-file": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/main.clab.yml",
+        "containerlab": "ospf-mpls-backbone"
+      },
+      "port-bindings": [
+      ]
+    },
+    "Site-D": {
+      "index": "11",
+      "shortname": "Site-D",
+      "longname": "clab-ospf-mpls-backbone-Site-D",
+      "fqdn": "Site-D.ospf-mpls-backbone.io",
+      "group": "",
+      "labdir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/Site-D",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.21.104",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-0eddc9fd61e3",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/clab-ospf-mpls-backbone/Site-D",
+        "clab-node-longname": "clab-ospf-mpls-backbone-Site-D",
+        "clab-node-name": "Site-D",
+        "clab-node-type": "",
+        "clab-owner": "chakib",
+        "clab-topo-file": "/home/chakib/Desktop/vs_code/USTHB/4th Year/S1/Advanced_Networks/Container_labs_act5/main.clab.yml",
+        "containerlab": "ospf-mpls-backbone"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "R2",
+          "interface": "e1-1",
+          "mac": "aa:c1:ab:4d:0e:34",
+          "peer": "z"
+        },
+        "z": {
+          "node": "R5",
+          "interface": "e1-1",
+          "mac": "aa:c1:ab:7f:00:e7",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "R2",
+          "interface": "e1-2",
+          "mac": "aa:c1:ab:f7:92:26",
+          "peer": "z"
+        },
+        "z": {
+          "node": "R6",
+          "interface": "e1-1",
+          "mac": "aa:c1:ab:6a:1f:5d",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "R2",
+          "interface": "e1-3",
+          "mac": "aa:c1:ab:1b:95:3b",
+          "peer": "z"
+        },
+        "z": {
+          "node": "R7",
+          "interface": "e1-1",
+          "mac": "aa:c1:ab:e0:a9:79",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "R5",
+          "interface": "e1-2",
+          "mac": "aa:c1:ab:53:d2:dc",
+          "peer": "z"
+        },
+        "z": {
+          "node": "R6",
+          "interface": "e1-2",
+          "mac": "aa:c1:ab:0a:31:98",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "R5",
+          "interface": "e1-3",
+          "mac": "aa:c1:ab:ae:91:aa",
+          "peer": "z"
+        },
+        "z": {
+          "node": "R7",
+          "interface": "e1-2",
+          "mac": "aa:c1:ab:fc:e3:b3",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "R6",
+          "interface": "e1-3",
+          "mac": "aa:c1:ab:86:78:0f",
+          "peer": "z"
+        },
+        "z": {
+          "node": "R7",
+          "interface": "e1-3",
+          "mac": "aa:c1:ab:f0:de:6f",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "R3",
+          "interface": "e1-1",
+          "mac": "aa:c1:ab:65:d3:27",
+          "peer": "z"
+        },
+        "z": {
+          "node": "R2",
+          "interface": "e1-4",
+          "mac": "aa:c1:ab:33:72:23",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "R3",
+          "interface": "e1-2",
+          "mac": "aa:c1:ab:66:df:99",
+          "peer": "z"
+        },
+        "z": {
+          "node": "R4",
+          "interface": "e1-1",
+          "mac": "aa:c1:ab:dd:83:6a",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "R4",
+          "interface": "e1-2",
+          "mac": "aa:c1:ab:3d:27:a4",
+          "peer": "z"
+        },
+        "z": {
+          "node": "R5",
+          "interface": "e1-4",
+          "mac": "aa:c1:ab:20:84:10",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "R3",
+          "interface": "e1-3",
+          "mac": "aa:c1:ab:aa:cf:da",
+          "peer": "z"
+        },
+        "z": {
+          "node": "Site-A",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:61:bb:57",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "R3",
+          "interface": "e1-4",
+          "mac": "aa:c1:ab:30:74:7a",
+          "peer": "z"
+        },
+        "z": {
+          "node": "Site-B",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:7b:bc:6c",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "R1",
+          "interface": "e1-1",
+          "mac": "aa:c1:ab:3f:8d:eb",
+          "peer": "z"
+        },
+        "z": {
+          "node": "R2",
+          "interface": "e1-5",
+          "mac": "aa:c1:ab:71:5e:ca",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "R1",
+          "interface": "e1-2",
+          "mac": "aa:c1:ab:99:a1:a5",
+          "peer": "z"
+        },
+        "z": {
+          "node": "R8",
+          "interface": "e1-1",
+          "mac": "aa:c1:ab:14:02:3d",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "R8",
+          "interface": "e1-2",
+          "mac": "aa:c1:ab:1d:d9:74",
+          "peer": "z"
+        },
+        "z": {
+          "node": "R7",
+          "interface": "e1-4",
+          "mac": "aa:c1:ab:a1:55:9f",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "R1",
+          "interface": "e1-3",
+          "mac": "aa:c1:ab:aa:43:44",
+          "peer": "z"
+        },
+        "z": {
+          "node": "Site-D",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:e9:fc:43",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "R8",
+          "interface": "e1-3",
+          "mac": "aa:c1:ab:b9:46:1a",
+          "peer": "z"
+        },
+        "z": {
+          "node": "Site-C",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:89:c8:7c",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}

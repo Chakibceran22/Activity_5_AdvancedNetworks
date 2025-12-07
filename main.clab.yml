@@ -1,0 +1,145 @@
+name: ospf-mpls-backbone
+
+mgmt:
+  network: ospf-mgmt
+  ipv4-subnet: 172.20.21.0/24
+
+topology:
+  nodes:
+    # ============================================
+    # BACKBONE ROUTERS (OSPF Area 0)
+    # ============================================
+    R2:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:latest
+      mgmt-ipv4: 172.20.21.12
+      startup-config: configs/R2.cfg
+
+    R5:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:latest
+      mgmt-ipv4: 172.20.21.15
+      startup-config: configs/R5.cfg
+
+    R6:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:latest
+      mgmt-ipv4: 172.20.21.16
+      startup-config: configs/R6.cfg
+
+    R7:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:latest
+      mgmt-ipv4: 172.20.21.17
+      startup-config: configs/R7.cfg
+
+    # ============================================
+    # AREA 1 ROUTERS (Site-A Access)
+    # ============================================
+    R3:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:latest
+      mgmt-ipv4: 172.20.21.13
+      startup-config: configs/R3.cfg
+
+    R4:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:latest
+      mgmt-ipv4: 172.20.21.14
+      startup-config: configs/R4.cfg
+
+    # ============================================
+    # AREA 2 ROUTERS (Site-D Access)
+    # ============================================
+    R1:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:latest
+      mgmt-ipv4: 172.20.21.11
+      startup-config: configs/R1.cfg
+
+    R8:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:latest
+      mgmt-ipv4: 172.20.21.18
+      startup-config: configs/R8.cfg
+
+    # ============================================
+    # CLIENT SITES (End Users)
+    # ============================================
+    Site-A:
+      kind: linux
+      image: alpine:latest
+      mgmt-ipv4: 172.20.21.101
+      exec:
+        - ip addr add 10.1.0.10/24 dev eth1
+        - ip route add 0.0.0.0/0 via 10.1.0.1
+
+    Site-B:
+      kind: linux
+      image: alpine:latest
+      mgmt-ipv4: 172.20.21.102
+      exec:
+        - ip addr add 10.2.0.10/24 dev eth1
+        - ip route add 0.0.0.0/0 via 10.2.0.1
+
+    Site-C:
+      kind: linux
+      image: alpine:latest
+      mgmt-ipv4: 172.20.21.103
+      exec:
+        - ip addr add 10.3.0.10/24 dev eth1
+        - ip route add 0.0.0.0/0 via 10.3.0.1
+
+    Site-D:
+      kind: linux
+      image: alpine:latest
+      mgmt-ipv4: 172.20.21.104
+      exec:
+        - ip addr add 10.4.0.10/24 dev eth1
+        - ip route add 0.0.0.0/0 via 10.4.0.1
+
+  links:
+    # ============================================
+    # BACKBONE MESH (OSPF Area 0)
+    # Full mesh for redundancy and MPLS readiness
+    # ============================================
+    # R2 <-> R5
+    - endpoints: [ "R2:ethernet-1/1", "R5:ethernet-1/1" ]
+    # R2 <-> R6
+    - endpoints: [ "R2:ethernet-1/2", "R6:ethernet-1/1" ]
+    # R2 <-> R7
+    - endpoints: [ "R2:ethernet-1/3", "R7:ethernet-1/1" ]
+    # R5 <-> R6
+    - endpoints: [ "R5:ethernet-1/2", "R6:ethernet-1/2" ]
+    # R5 <-> R7
+    - endpoints: [ "R5:ethernet-1/3", "R7:ethernet-1/2" ]
+    # R6 <-> R7
+    - endpoints: [ "R6:ethernet-1/3", "R7:ethernet-1/3" ]
+
+    # ============================================
+    # AREA 1 CONNECTIONS (R3, R4 + Site-A)
+    # ============================================
+    # R3 <-> R2 (Area 0 to Area 1 - ABR)
+    - endpoints: [ "R3:ethernet-1/1", "R2:ethernet-1/4" ]
+    # R3 <-> R4 (Within Area 1)
+    - endpoints: [ "R3:ethernet-1/2", "R4:ethernet-1/1" ]
+    # R4 <-> R5 (Area 1 to Area 0 - ABR)
+    - endpoints: [ "R4:ethernet-1/2", "R5:ethernet-1/4" ]
+    # R3 <-> Site-A (Client connection)
+    - endpoints: [ "R3:ethernet-1/3", "Site-A:eth1" ]
+    # R3 <-> Site-B (Client connection - redundant path)
+    - endpoints: [ "R3:ethernet-1/4", "Site-B:eth1" ]
+
+    # ============================================
+    # AREA 2 CONNECTIONS (R1, R8 + Site-D)
+    # ============================================
+    # R1 <-> R2 (Area 2 to Area 0 - ABR)
+    - endpoints: [ "R1:ethernet-1/1", "R2:ethernet-1/5" ]
+    # R1 <-> R8 (Within Area 2)
+    - endpoints: [ "R1:ethernet-1/2", "R8:ethernet-1/1" ]
+    # R8 <-> R7 (Area 2 to Area 0 - ABR)
+    - endpoints: [ "R8:ethernet-1/2", "R7:ethernet-1/4" ]
+    # R1 <-> Site-D (Client connection)
+    - endpoints: [ "R1:ethernet-1/3", "Site-D:eth1" ]
+    # R8 <-> Site-C (Client connection - redundant path)
+    - endpoints: [ "R8:ethernet-1/3", "Site-C:eth1" ]
